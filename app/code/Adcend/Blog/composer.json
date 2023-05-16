@@ -1,0 +1,16 @@
+{
+    "name": "adcend/module-blog",
+    "description": "N/A",
+    "type": "magento2-module",
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Adcend\\Blog\\": ""
+        }
+    }
+}
