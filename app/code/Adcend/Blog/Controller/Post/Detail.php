@@ -3,21 +3,20 @@ declare(strict_types=1);
 
 namespace Adcend\Blog\Controller\Post;
 
-use \Magento\Framework\App\Action\HttpGetActionInterface;
-use \Magento\Framework\App\RequestInterface;
+use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\View\Result\PageFactory;
 
 class Detail implements HttpGetActionInterface
 {
-    private $request;
+    private $pageFactory;
 
-    public function __construct(RequestInterface $request)
+    public function __construct(PageFactory $pageFactory)
     {
-        $this->request = $request;
+        $this->pageFactory = $pageFactory;
     }
 
 	public function execute()
 	{
-        var_dump($this->request->getParams());
-        die;
+        return $this->pageFactory->create();
 	}
 }
