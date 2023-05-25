@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+	layout="2columns-left"
+>
 	<body>
 		<referenceContainer name="main">
 			<block name="blog.post.detail.content" template="Adcend_Blog::post/detail/content.phtml" />
@@ -8,5 +12,6 @@
 		<referenceContainer name="sidebar.main">
 			<block name="blog.post.detail.sidebar" template="Adcend_Blog::post/detail/sidebar.phtml" />
 		</referenceContainer>
+		<referenceContainer name="sidebar.additional" display="false" />
 	</body>
 </page>
