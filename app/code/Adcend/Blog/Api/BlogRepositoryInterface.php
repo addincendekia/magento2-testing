@@ -14,8 +14,14 @@ interface BlogRepositoryInterface
     public function getAll();
 
     /**
+     * @param mixed $id
+     * @return BlogInterface
+     */
+    public function getById($id);
+
+    /**
      * @param BlogInterface $blog
      * @return BlogInterface
      */
-    public function save(BlogInterface $blog): BlogInterface;
+    public function save($blog);
 }

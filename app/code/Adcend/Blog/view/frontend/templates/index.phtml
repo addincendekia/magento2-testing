@@ -2,28 +2,27 @@
 
 /** @var Magento\Framework\View\Element\Template $block */
 
-/** @var Adcend\Blog\ViewModel\Blog $blogViewModel */
+/** @var Adcend\Blog\ViewModel\Blog $blogVm */
 $blogVm = $block->getData('blog_view_model');
-
 ?>
 
 <section class="blog-index">
     <h1>Latest Post's</h1>
     <?php
-    foreach($blogVm->list() as $blog):
-        /** @var Adcend\Blog\Model\Blog $blog */
+    foreach($blogVm->list() as $post):
+        /** @var Adcend\Blog\Model\Blog $post */
         ?>
     <div>
         <a
-            href="<?= $block->getUrl("blog/post", [ "id" => $blog->getId() ]) ?>">
-            <h2><?= $blog->getTitle() ?></h2>
+            href="<?= $block->getUrl("blog/post", [ "id" => $post->getId() ]) ?>">
+            <h2><?= $post->getTitle() ?></h2>
         </a>
         <div>
-            <time datetime=""><?= $blog->getCreatedAt() ?></time>
+            <time datetime=""><?= $post->getCreatedAt() ?></time>
             &nbsp;
             |
             &nbsp;
-            <span><?= $blog->getAuthor() ?></span>
+            <span><?= $post->getAuthor() ?></span>
         </div>
     </div>
     <?php endforeach; ?>

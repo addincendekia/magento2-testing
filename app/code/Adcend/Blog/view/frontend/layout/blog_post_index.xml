@@ -7,10 +7,18 @@
 >
 	<body>
 		<referenceContainer name="main">
-			<block name="blog.post.content" template="Adcend_Blog::post/content.phtml" />
+			<block name="blog.post.content" template="Adcend_Blog::post/content.phtml">
+				<arguments>
+					<argument name="blog_view_model" xsi:type="object">Adcend\Blog\ViewModel\Blog</argument>
+				</arguments>
+			</block>
 		</referenceContainer>
 		<referenceContainer name="sidebar.main">
-			<block name="blog.post.sidebar" template="Adcend_Blog::post/sidebar.phtml" />
+			<block name="blog.post.sidebar" template="Adcend_Blog::post/sidebar.phtml">
+				<arguments>
+					<argument name="blog_view_model" xsi:type="object">Adcend\Blog\ViewModel\Blog</argument>
+				</arguments>
+			</block>
 		</referenceContainer>
 		<referenceContainer name="sidebar.additional" display="false" />
 	</body>

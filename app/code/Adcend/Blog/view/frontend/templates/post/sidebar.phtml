@@ -1,3 +1,28 @@
-<div class="blog-post-detail-sidebar">
-    <p><?= __('Blog Post Sidebar') ?></p>
-</div>
+<?php
+
+/** @var Magento\Framework\View\Element\Template $block */
+
+/** @var Adcend\Blog\ViewModel\Blog $blogVm */
+$blogVm = $block->getData('blog_view_model');
+?>
+<section class="blog-post-sidebar">
+    <h2>Related Post's</h2>
+    <?php
+    foreach($blogVm->list() as $post):
+        /** @var Adcend\Blog\Model\Blog $post */
+        ?>
+    <div>
+        <a
+            href="<?= $block->getUrl("blog/post", [ "id" => $post->getId() ]) ?>">
+            <h3><?= $post->getTitle() ?></h3>
+        </a>
+        <div>
+            <time datetime=""><?= $post->getCreatedAt() ?></time>
+            &nbsp;
+            |
+            &nbsp;
+            <span><?= $post->getAuthor() ?></span>
+        </div>
+    </div>
+    <?php endforeach; ?>
+</section>

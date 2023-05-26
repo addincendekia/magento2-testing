@@ -1,3 +1,19 @@
-<div class="blog-post-detail-content">
-    <p><?= __('Blog Post Content') ?></p>
-</div>
+<?php
+
+/** @var Magento\Framework\View\Element\Template $block */
+
+/** @var Adcend\Blog\ViewModel\Blog $blogVm */
+$blogVm = $block->getData('blog_view_model');
+$post = $blogVm->show();
+?>
+<article class="blog-post-detail-content">
+    <h1><?= $post->getTitle() ?></h1>
+    <div>
+        <time datetime=""><?= $post->getCreatedAt() ?></time>
+        &nbsp;
+        |
+        &nbsp;
+        <span><?= $post->getAuthor() ?></span>
+    </div>
+    <p><?= $post->getContent() ?></p>
+</article>
