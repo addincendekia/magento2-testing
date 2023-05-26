@@ -9,6 +9,11 @@ use Adcend\Blog\Api\Data\BlogInterface;
 interface BlogRepositoryInterface
 {
     /**
+     * @return array
+     */
+    public function getAll();
+
+    /**
      * @param BlogInterface $blog
      * @return BlogInterface
      */

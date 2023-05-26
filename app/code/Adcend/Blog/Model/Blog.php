@@ -20,41 +20,41 @@ class Blog extends AbstractModel implements BlogInterface
 
     public function getTitle()
     {
-        $this->getData(self::TITLE);
+        return $this->getData(self::TITLE);
     }
 
     public function setTitle($title)
     {
-        $this->setData(self::TITLE, $title);
+        return $this->setData(self::TITLE, $title);
     }
 
     public function getContent()
     {
-        $this->getData(self::CONTENT);
+        return $this->getData(self::CONTENT);
     }
 
     public function setContent($content)
     {
-        $this->setData(self::CONTENT, $content);
+        return $this->setData(self::CONTENT, $content);
     }
 
     public function getAuthor()
     {
-        $this->getData(self::AUTHOR);
+        return $this->getData(self::AUTHOR);
     }
 
     public function setAuthor($author)
     {
-        $this->setData(self::TITLE, $author);
+        return $this->setData(self::TITLE, $author);
     }
 
     public function getCreatedAt()
     {
-        $this->getData(self::CREATED_AT);
+        return $this->getData(self::CREATED_AT);
     }
 
     public function getUpdatedAt()
     {
-        $this->getData(self::UPDATED_AT);
+        return $this->getData(self::UPDATED_AT);
     }
 }

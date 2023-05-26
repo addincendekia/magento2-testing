@@ -7,7 +7,11 @@
 >
 	<body>
 		<referenceContainer name="main">
-			<block name="blog" template="Adcend_Blog::index.phtml" />
+			<block name="blog" template="Adcend_Blog::index.phtml">
+				<arguments>
+					<argument name="blog_view_model" xsi:type="object">Adcend\Blog\ViewModel\Blog</argument>
+				</arguments>
+			</block>
 		</referenceContainer>
 	</body>
 </page>

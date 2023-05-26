@@ -3,21 +3,19 @@ declare(strict_types=1);
 
 namespace Adcend\Blog\Controller\Post;
 
-use \Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\App\Action\HttpGetActionInterface;
 
 class Index implements HttpGetActionInterface
 {
-    private $redirectFactory;
+    private $pageFactory;
 
-    public function __construct(\Magento\Framework\Controller\Result\RedirectFactory $redirectFactory)
+    public function __construct(\Magento\Framework\View\Result\PageFactory $pageFactory)
     {
-        $this->redirectFactory = $redirectFactory;
+        $this->pageFactory = $pageFactory;
     }
 
-	public function execute()
-	{
-        $redirect = $this->redirectFactory->create();
-
-        return $redirect->setPath('*/post/detail');
-	}
+    public function execute()
+    {
+        return $this->pageFactory->create();
+    }
 }
