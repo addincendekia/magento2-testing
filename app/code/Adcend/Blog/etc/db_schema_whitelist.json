@@ -1,0 +1,15 @@
+{
+    "adcend_blog": {
+        "column": {
+            "id": true,
+            "title": true,
+            "content": true,
+            "author": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
