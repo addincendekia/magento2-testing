@@ -13,6 +13,10 @@ define([
                 message: true,
                 cartTotal: true,
             },
+            listens: {
+                "minicart_content.subtotal.container.subtotal.subtotal.totals:cart":
+                    "_updateCartTotal",
+            },
         },
         initialize: function () {
             this._super();
@@ -20,6 +24,11 @@ define([
             this._syncCart();
 
             this._generateMessage();
+        },
+        _updateCartTotal: function (updatedCart) {
+            if (updatedCart?.subtotalAmount) {
+                this.cartTotal = updatedCart.subtotalAmount;
+            }
         },
         _syncCart: function () {
             const self = this;
@@ -29,12 +38,6 @@ define([
             customerData.getInitCustomerData().done(() => {
                 if (cart()?.subtotalAmount) {
                     self.cartTotal = cart()?.subtotalAmount;
-                }
-            });
-
-            cart.subscribe(function (updatedCart) {
-                if (updatedCart?.subtotalAmount) {
-                    self.cartTotal = updatedCart.subtotalAmount;
                 }
             });
         },
