@@ -1,0 +1,15 @@
+<?php 
+/** @var Magento\Framework\View\Element\Template $block */
+?>
+
+<div class="free-shipping-alert" data-bind="scope: 'free-shipping-alert'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        ".free-shipping-alert": {
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+        }
+    }
+</script>
