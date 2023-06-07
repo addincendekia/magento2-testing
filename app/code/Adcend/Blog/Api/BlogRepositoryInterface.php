@@ -9,7 +9,7 @@ use Adcend\Blog\Api\Data\BlogInterface;
 interface BlogRepositoryInterface
 {
     /**
-     * @return array
+     * @return Adcend\Blog\Api\Data\BlogInterface[]
      */
     public function getAll();
 
